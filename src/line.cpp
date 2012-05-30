@@ -70,7 +70,6 @@ namespace cpplot {
         if(XData.size() == 0) return;
 
         float xx,yy;// transformed coordinates
-        float r;//marker size
         float rx,ry;
         std::vector<float> rgb = ColorSpec2RGB(Color);
         glColor3f(rgb[0],rgb[1],rgb[2]);
@@ -116,7 +115,6 @@ namespace cpplot {
             if(Marker != "none") {// Marker //
 
                 // Scale with window size
-                r  = MarkerSize/500.0;
                 rx = MarkerSize/gcf()->window_w;
                 ry = MarkerSize/gcf()->window_h;
 

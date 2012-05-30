@@ -381,10 +381,9 @@ namespace cpplot {
             }
             // sort contour points
             int is = 0;
-            unsigned int m, k, kk;
+            unsigned int m, kk;
             int mode, mode_next;
 
-            k = 0;
             mode = 0;
             while( mode < 5 ) {
 

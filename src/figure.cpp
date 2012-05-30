@@ -86,10 +86,9 @@ namespace cpplot {
 
     void figure_t_t::draw_layer_list() {
         if(layers.size() <= 1) return;
-        int l,t,w,h,r;
+        int l,w,h,r;
         std::string s;
         l = 1;
-        t = 1;
         w = 20;//button_width;
         h = 20;//button_height;
         r = 3;
@@ -138,9 +137,8 @@ namespace cpplot {
     // events (mouse)
     void figure_t_t::mouse(const int button, const int state, const int x, const int y) {
         // Layer list click
-        int l,t,w,h;
+        int l,w,h;
         l = 1;
-        t = 1;
         w = 20;//button_width;
         h = 20;//button_height;
 
