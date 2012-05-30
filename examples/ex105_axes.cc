@@ -1,4 +1,4 @@
-#include "cpplot.hpp"
+#include <cpplot/cpplot.hpp>
 #include <boost/thread.hpp>
 #include <iostream>
 

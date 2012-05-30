@@ -1,4 +1,4 @@
-#include "cpplot.hpp"
+#include <cpplot/cpplot.hpp>
 int main(int argc,char* argv[]){
     using namespace cpplot;
     glut::init(argc, argv);

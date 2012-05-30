@@ -1,4 +1,4 @@
-#include "cpplot.hpp"
+#include <cpplot/cpplot.hpp>
 
 bool is_run = true;
 

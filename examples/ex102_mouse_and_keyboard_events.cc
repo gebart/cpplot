@@ -1,4 +1,4 @@
-#include "cpplot.hpp"
+#include <cpplot/cpplot.hpp>
 #include <utility>
 int main(int argc, char* argv[]){
     using namespace cpplot;
