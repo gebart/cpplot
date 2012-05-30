@@ -165,9 +165,9 @@ namespace cpplot {
     // print
     inline void print(const std::string name = "out.eps") { if(cf) cf->print(name); } ///< See figure.hpp
 
-    inline void operator<<(line_t ln, const std::pair<double, double> p) { ln->vertex(p.first, p.second); } ///< Add point to line
-    inline void operator<<(axes_t a, const std::pair<double, double> p) { a->gco<Line>()->vertex(p.first, p.second); } ///< Add point to current line in the axes object
-    inline void operator<<(layer_t a, const std::pair<double, double> p) { a->gca()->gco<Line>()->vertex(p.first, p.second); } ///< Add point to current line in the layer object
-    inline void operator<<(figure_t a, const std::pair<double, double> p) { a->gca()->gco<Line>()->vertex(p.first, p.second); } ///< Add point to current line in the figure object
+    inline line_t& operator<<(line_t& ln, const std::pair<double, double> p) { ln->vertex(p.first, p.second); return ln; } ///< Add point to line
+    inline axes_t& operator<<(axes_t& a, const std::pair<double, double> p) { a->gco<Line>()->vertex(p.first, p.second); return a; } ///< Add point to current line in the axes object
+    inline layer_t& operator<<(layer_t& a, const std::pair<double, double> p) { a->gca()->gco<Line>()->vertex(p.first, p.second); return a; } ///< Add point to current line in the layer object
+    inline figure_t& operator<<(figure_t& a, const std::pair<double, double> p) { a->gca()->gco<Line>()->vertex(p.first, p.second); return a; } ///< Add point to current line in the figure object
 }
 #endif
