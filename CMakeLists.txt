@@ -1,6 +1,17 @@
 cmake_minimum_required(VERSION 2.8)
 project(CPPLOT)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
+      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+      FORCE)
+endif(NOT CMAKE_BUILD_TYPE)
+
+# Debug
+if(CMAKE_BUILD_TYPE MATCHES Debug OR CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
+  set(DEBUG 1)
+endif(CMAKE_BUILD_TYPE MATCHES Debug OR CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
+
 find_package(GLUT)
 find_package(OpenGL)
 
@@ -15,7 +26,10 @@ option(CPPLOT_BUILD_EXAMPLES "Build examples" OFF)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_CXX_FLAGS "-ggdb -Wall -Wextra -fPIC")
+add_definitions("-Wall -Wextra")
+if(DEBUG)
+    add_definitions("-ggdb3")
+endif(DEBUG)
 
 ## Build the library
 include_directories(${PROJECT_SOURCE_DIR}/src)
