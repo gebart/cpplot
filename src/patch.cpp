@@ -301,8 +301,8 @@ namespace cpplot {
         }
         std::vector<float> rgb;
         tcvec tc;
-        for(unsigned int j = 0; j < IC.size(); ++j) {
-            rgb = ca->map2color(IC[j]);
+        for(dvec::const_iterator it = IC.begin(); it != IC.end(); ++it) {
+            rgb = ca->map2color(*it);
             tc.push_back(rgb);
         }
         return tc;
