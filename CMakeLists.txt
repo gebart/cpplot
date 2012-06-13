@@ -35,7 +35,20 @@ endif(DEBUG)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include_directories(${PROJECT_SOURCE_DIR}/include/cpplot)
 set(SRC_DIR "src")
-add_library(cpplot SHARED ${SRC_DIR}/cpplot.cpp ${SRC_DIR}/math.cpp ${SRC_DIR}/glut.cpp ${SRC_DIR}/figure.cpp ${SRC_DIR}/layer.cpp ${SRC_DIR}/axes.cpp ${SRC_DIR}/color.cpp ${SRC_DIR}/drawing.cpp ${SRC_DIR}/line.cpp ${SRC_DIR}/patch.cpp ${SRC_DIR}/surface.cpp ${SRC_DIR}/text.cpp)
+add_library(cpplot SHARED
+    ${SRC_DIR}/cpplot.cpp
+    ${SRC_DIR}/math.cpp
+    ${SRC_DIR}/glut.cpp
+    ${SRC_DIR}/figure.cpp
+    ${SRC_DIR}/layer.cpp
+    ${SRC_DIR}/axes.cpp
+    ${SRC_DIR}/color.cpp
+    ${SRC_DIR}/drawing.cpp
+    ${SRC_DIR}/line.cpp
+    ${SRC_DIR}/patch.cpp
+    ${SRC_DIR}/scatter.cpp
+    ${SRC_DIR}/surface.cpp
+    ${SRC_DIR}/text.cpp)
 target_link_libraries(cpplot
     ${GLUT_LIBRARY}
     ${OPENGL_LIBRARY}
