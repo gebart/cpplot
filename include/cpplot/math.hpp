@@ -36,19 +36,35 @@ namespace cpplot {
         /// Get the maximum valued element from vector
         template<typename T>
         T max(const std::vector<T>& x) {
-            return *std::max_element(x.begin(), x.end());
+            typename std::vector<T>::const_iterator it = std::max_element(x.begin(), x.end());
+            if (it != x.end())
+            {
+                return *it;
+            }
+            else
+            {
+                return std::numeric_limits<T>::min();
+            }
         }
 
         /// Get the minimum valued element from vector
         template<typename T>
         T min(const std::vector<T>& x) {
-            return *std::min_element(x.begin(), x.end());
+            typename std::vector<T>::const_iterator it = std::min_element(x.begin(), x.end());
+            if (it != x.end())
+            {
+                return *it;
+            }
+            else
+            {
+                return std::numeric_limits<T>::max();
+            }
         }
 
         /// Get the maximum valued element from a matrix
         template<typename T>
         T max(const std::vector<std::vector<T> >& x) {
-            double res = std::numeric_limits<double>::min();
+            T res = std::numeric_limits<T>::min();
             for(unsigned int i = 0; i < x.size(); ++i) {
                 res = std::max(res, max(x[i]));
             }
@@ -58,7 +74,7 @@ namespace cpplot {
         /// Get the minimum valued element from matrix
         template<typename T>
         T  min(const std::vector<std::vector<T> >& x) {
-            double res = std::numeric_limits<double>::max();
+            T res = std::numeric_limits<T>::max();
             for(unsigned int i = 0; i < x.size(); ++i) {
                 res = std::min(res, min(x[i]));
             }
