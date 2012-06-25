@@ -799,6 +799,10 @@ namespace cpplot {
         {
             normx = (x - xmin)/(xmax - xmin);
         }
+        if(isnan(normx) || isinf(normx))
+        {
+            normx = 0.f;
+        }
 
         std::vector<float> rgb;
         rgb = cmap[(int)(normx*(n-1))];
