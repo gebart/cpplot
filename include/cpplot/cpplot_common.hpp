@@ -48,6 +48,7 @@ Version:0.3.13
 #include "line.hpp"
 #include "surface.hpp"
 #include "patch.hpp"
+#include "scatter.hpp"
 #include "text.hpp"
 #include "axes.hpp"
 #include "layer.hpp"
